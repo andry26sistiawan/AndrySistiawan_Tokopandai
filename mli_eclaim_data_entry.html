@@ -1,0 +1,454 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Entry</title>
+    <link rel="stylesheet" type="text/css" href="../WebResources/mli_bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../WebResources/mli_select2.css" />
+    <link rel="stylesheet" href="../WebResources/mli_eclaim_data_entry.css">
+    <link rel="stylesheet" href="../WebResources/mli_eclaim_claim_detail.css">
+    <link rel="stylesheet" type="text/css" href="../WebResources/mli_dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="../WebResources/mli_jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="../WebResources/mli_responsive.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="../WebResources/mli_select.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="../WebResources/mli_jquery.datetimepicker.css">
+    <link rel="stylesheet" type="text/css" href="../WebResources/mli_owl_theme_default_min.css">
+    <link rel="stylesheet" type="text/css" href="../WebResources/mli_owl_carousel_min.css">
+	
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script> -->
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css"/> -->
+	
+	
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"> -->
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/css/bootstrap-select.min.css"> -->
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+	<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.bundle.min.js"></script> -->
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/js/bootstrap-select.min.js"></script> -->
+	
+    <style>
+        .multipleselect {
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 12px;
+        }
+		
+		.select2 select2-container{
+			width: 170px;
+		}
+		.select2-results__option select2-results__option--selectable select2-results__option--selected{
+			font-size: 12px;
+		
+		}
+		.fooSelect .select2-results__option
+		{
+			font-size: 12px;
+		}
+		.select2-results__option
+		{
+			font-size: 12px;
+		}
+    </style>
+    <!--<link rel="stylesheet" type="text/css" href="../WebResources/mli_bootstrap_multiselect.css">-->
+</head>
+<body>
+    <div class="lds-roller" id="dataEntryRoller" style="margin-left:47%;margin-top:50px; position: fixed;"><div></div><div></div><div></div></div>
+    <div class="custom-scrollbar" id="fieldsets">
+		<div class="tab" id="claimTabs">
+            <!--<div class="carousel-wrap">
+                <div class="owl-carousel owl-theme">
+                    <div class="item">
+                        <button class="tablinks active" id="OTHER.379d5838-46d3-eb11-8160-0050568b0cd5" onclick="openTabContent(event, this); return false;">CLM-2021-0000268</button>
+                    </div>
+                    <div class="item">
+                        <button class="tablinks" id="OPD.3b9d5838-46d3-eb11-8160-0050568b0cd5" onclick="openTabContent(event, this); return false;">CLM-2021-0000269</button>
+                    </div>
+                    <div class="item">
+                        <button class="tablinks" id="IPD.3f9d5838-46d3-eb11-8160-0050568b0cd5" onclick="openTabContent(event, this); return false;">CLM-2021-0000270</button>
+                    </div>
+                    <div class="item">
+                        <button class="tablinks" id="IPD.3f9d5838-46d3-eb11-8160-0050568b0cd5" onclick="openTabContent(event, this); return false;">CLM-2021-0000270</button>
+                    </div>
+                    <div class="item">
+                        <button class="tablinks" id="IPD.3f9d5838-46d3-eb11-8160-0050568b0cd5" onclick="openTabContent(event, this); return false;">CLM-2021-0000270</button>
+                    </div>
+                    <div class="item">
+                        <button class="tablinks" id="IPD.3f9d5838-46d3-eb11-8160-0050568b0cd5" onclick="openTabContent(event, this); return false;">CLM-2021-0000270</button>
+                    </div>
+                    <div class="item">
+                        <button class="tablinks" id="IPD.3f9d5838-46d3-eb11-8160-0050568b0cd5" onclick="openTabContent(event, this); return false;">CLM-2021-0000270</button>
+                    </div>
+                    <div class="item">
+                        <button class="tablinks" id="IPD.3f9d5838-46d3-eb11-8160-0050568b0cd5" onclick="openTabContent(event, this); return false;">CLM-2021-0000270</button>
+                    </div>
+                    <div class="item">
+                        <button class="tablinks" id="IPD.3f9d5838-46d3-eb11-8160-0050568b0cd5" onclick="openTabContent(event, this); return false;">CLM-2021-0000270</button>
+                    </div>
+                    <div class="item">
+                        <button class="tablinks" id="IPD.3f9d5838-46d3-eb11-8160-0050568b0cd5" onclick="openTabContent(event, this); return false;">CLM-2021-0000270</button>
+                    </div>
+                    <div class="item">
+                        <button class="tablinks" id="IPD.3f9d5838-46d3-eb11-8160-0050568b0cd5" onclick="openTabContent(event, this); return false;">CLM-2021-0000270</button>
+                    </div>
+                    <div class="item">
+                        <button class="tablinks" id="IPD.3f9d5838-46d3-eb11-8160-0050568b0cd5" onclick="openTabContent(event, this); return false;">CLM-2021-0000270</button>
+                    </div>
+                </div>
+            </div>-->
+        </div>
+        <div class="tabForm" id="tabContents">
+            <!--<div id="tabContent.379d5838-46d3-eb11-8160-0050568b0cd5" class="tabContent OTHER active">
+                OTHER
+            </div>
+
+            <div id="tabContent.3b9d5838-46d3-eb11-8160-0050568b0cd5" class="tabContent OPD">
+                <div class="subContent">OPD</div>
+                <div class="subContent">OPD</div>
+            </div>
+
+            <div id="tabContent.3f9d5838-46d3-eb11-8160-0050568b0cd5" class="tabContent IPD">
+                <button type="button" class="collapsible required active">Hospitalization Details / Inpatient Details for Insured</button>
+                <div class="content required">
+                  <center>
+                    <div class="row-wrapper form-input">
+                        <div class="form-input-labels">
+                            <label name="mli_medicalstartdate" for="mli_medicalstartdate" class="input-field-12">Date of Admission(*)</label>
+                            <span class="input-space-6"></span><span class="input-space-6"></span>
+                            <label name="mli_medicalenddate" for="mli_medicalenddate" class="input-field-12">Date of Discharge(*)</label>
+                            <span class="input-space-6"></span><span class="input-space-6"></span>
+                            <label name="mli_admitteddays" for="mli_admitteddays" class="input-field-12">Admitted Days</label>
+                            <span class="input-space-6"></span><span class="input-space-6"></span>
+                            <label name="mli_icuduration" for="mli_icuduration" class="input-field-12">ICU Days</label>
+                        </div>
+                        <div class="form-input-values">
+                            <input type="text" id="mli_medicalstartdate" class="input-field-12 calendar mli_medicalhistory" placeholder="dd/mm/yyyy" />
+                            <span class="input-space-6"></span><span class="input-space-6"></span>
+                            <input type="text" id="mli_medicalenddate" class="input-field-12 calendar mli_medicalhistory" placeholder="dd/mm/yyyy" />
+                            <span class="input-space-6"></span><span class="input-space-6"></span>
+                            <input type="text" id="mli_admitteddays" class="input-field-12 mli_medicalhistory" placeholder="No of admitted days" disabled/>
+                            <div class="input-field-12">
+                                <input type="checkbox" id="mli_hospitalstayadjusteddays" class="mli_medicalhistory" name="admittedDays" value="1">
+                                <label name="mli_hospitalstayadjusteddays" for="mli_hospitalstayadjusteddays">Add 1 Day</label>
+                            </div>
+                            <input type="number" id="mli_icuduration" class="input-field-12 mli_medicalhistory" min="0" value="0" step="1" placeholder="No of ICU days" />
+                        </div>
+                    </div>
+                </center>
+                <div class="container">
+                  <div class="row">
+                    <div class="col-sm">
+                      <label name="mli_medicalstartdate.3f9d5838-46d3-eb11-8160-0050568b0cd5" for="mli_medicalstartdate.3f9d5838-46d3-eb11-8160-0050568b0cd5">Date of Admission(*)</label>
+                    </div>
+                    <div class="col-sm">
+                      <input type="text" id="mli_medicalstartdate.3f9d5838-46d3-eb11-8160-0050568b0cd5" class="calendar mli_medicalhistory mli_medicalstartdate" placeholder="dd/mm/yyyy" />
+                    </div>
+
+                    <div class="col-sm">
+                      <label name="mli_medicalenddate.3f9d5838-46d3-eb11-8160-0050568b0cd5" for="mli_medicalenddate.3f9d5838-46d3-eb11-8160-0050568b0cd5">Date of Discharge(*)</label>
+                    </div>
+                    <div class="col-sm">
+                      <input type="text" id="mli_medicalenddate.3f9d5838-46d3-eb11-8160-0050568b0cd5" class="calendar mli_medicalhistory mli_medicalenddate" placeholder="dd/mm/yyyy" />
+                    </div>
+                    <div class="col-sm">
+                        <label name="mli_icuduration.3f9d5838-46d3-eb11-8160-0050568b0cd5" for="mli_icuduration.3f9d5838-46d3-eb11-8160-0050568b0cd5">ICU Days</label>
+                    </div>
+                    <div class="col-sm">
+                        <input type="number" id="mli_icuduration.3f9d5838-46d3-eb11-8160-0050568b0cd5" class="mli_medicalhistory mli_icuduration" min="0" value="0" step="1" placeholder="No of ICU days" />
+                    </div>
+                  </div>
+                  <br />
+                  <br />
+                  <div class="row">
+                    <div class="col-sm">
+                      <label name="insuredAge.3f9d5838-46d3-eb11-8160-0050568b0cd5" for="insuredAge.3f9d5838-46d3-eb11-8160-0050568b0cd5">Insured's Age</label>
+                    </div>
+                    <div class="col-sm">
+                      <input type="text" id="insuredAge.3f9d5838-46d3-eb11-8160-0050568b0cd5" class="insuredAge" placeholder="Insured's Age" disabled/>
+                    </div>
+                    <div class="col-sm">
+                        <label name="mli_admitteddays.3f9d5838-46d3-eb11-8160-0050568b0cd5" for="mli_admitteddays.3f9d5838-46d3-eb11-8160-0050568b0cd5">Admitted Days</label>
+                    </div>
+                    <div class="col-sm">
+                        <input type="text" id="mli_admitteddays.3f9d5838-46d3-eb11-8160-0050568b0cd5" class="mli_medicalhistory mli_admitteddays" placeholder="No of admitted days" disabled/>
+                    </div>
+                    <div class="col-sm">
+                        <input type="checkbox" id="mli_hospitalstayadjusteddays.3f9d5838-46d3-eb11-8160-0050568b0cd5" class="mli_medicalhistory mli_hospitalstayadjusteddays" name="admittedDays" value="1">
+                        <label name="mli_hospitalstayadjusteddays.3f9d5838-46d3-eb11-8160-0050568b0cd5" for="mli_hospitalstayadjusteddays.3f9d5838-46d3-eb11-8160-0050568b0cd5">Add 1 Day</label>
+                    </div>
+                    <div class="col-sm">
+
+                    </div>
+                  </div>
+                  <br />
+                  <br />
+                  <div class="row">
+                    <div class="col-sm">
+                      <label name="mli_firstconsultationdate.3f9d5838-46d3-eb11-8160-0050568b0cd5" for="mli_firstconsultationdate.3f9d5838-46d3-eb11-8160-0050568b0cd5">First Consultation Date(*)</label>
+                    </div>
+                    <div class="col-sm">
+                      <input type="text" id="mli_firstconsultationdate.3f9d5838-46d3-eb11-8160-0050568b0cd5" class="calendar mli_medicalhistory mli_firstconsultationdate" placeholder="dd/mm/yyyy" />
+                    </div>
+
+                    <div class="col-sm">
+                      <label name="mli_isdischargesummarystamped.3f9d5838-46d3-eb11-8160-0050568b0cd5" for="mli_isdischargesummarystamped.3f9d5838-46d3-eb11-8160-0050568b0cd5">Discharge Summary Stamped?(*)</label>
+                    </div>
+                    <div class="col-sm">
+                        <select id="mli_isdischargesummarystamped.3f9d5838-46d3-eb11-8160-0050568b0cd5" class="mli_medicalhistory mli_isdischargesummarystamped">
+                            <option value="">--</option>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm">
+                      <label name="mli_therapy.3f9d5838-46d3-eb11-8160-0050568b0cd5" for="mli_therapy.3f9d5838-46d3-eb11-8160-0050568b0cd5">Therapy</label>
+                    </div>
+                    <div class="col-sm">
+                      <input type="text" id="mli_therapy.3f9d5838-46d3-eb11-8160-0050568b0cd5" class="mli_medicalhistory mli_therapy input-text-full"/>
+                    </div>
+                  </div>
+                  <br />
+                  <br />
+                  <div class="row">
+                    <div class="col-sm-2">
+                      <label name="mli_anamnesisdesc.3f9d5838-46d3-eb11-8160-0050568b0cd5" for="mli_anamnesisdesc.3f9d5838-46d3-eb11-8160-0050568b0cd5">Anamnesa</label>
+                    </div>
+                    <div class="col-sm-4">
+                      <textarea id="mli_anamnesisdesc.3f9d5838-46d3-eb11-8160-0050568b0cd5" class="mli_medicalhistory mli_anamnesisdesc"></textarea>
+                    </div>
+                    <div class="col-sm-2">
+                      <label name="mli_remarks.3f9d5838-46d3-eb11-8160-0050568b0cd5" for="mli_remarks.3f9d5838-46d3-eb11-8160-0050568b0cd5">Diagnosis Remarks</label>
+                    </div>
+                    <div class="col-sm-4">
+                      <textarea id="mli_remarks.3f9d5838-46d3-eb11-8160-0050568b0cd5" class="mli_diagnosis mli_remarks"></textarea>
+                    </div>
+                  </div>
+                  <br />
+                  <br />
+                  <div class="row">
+                    <div class="col-sm">
+                      <label name="mli_associatedcondition.3f9d5838-46d3-eb11-8160-0050568b0cd5" for="mli_associatedcondition.3f9d5838-46d3-eb11-8160-0050568b0cd5">Related To</label>
+                    </div>
+                    <div class="col-sm">
+                      <select id="mli_associatedcondition.3f9d5838-46d3-eb11-8160-0050568b0cd5" class="mli_medicalhistory mli_associatedcondition" multiple size="4">
+                            <option value="1">Accident</option>
+                            <option value="2">TPD</option>
+                            <option value="3">Geriatric</option>
+                            <option value="4">Emergency Outpatient</option>
+                        </select>
+                    </div>
+                    <div class="col-sm">
+                      <label name="mli_pregnancyprocedure.3f9d5838-46d3-eb11-8160-0050568b0cd5" for="mli_pregnancyprocedure.3f9d5838-46d3-eb11-8160-0050568b0cd5">Pregnancy Procedure</label>
+                    </div>
+                    <div class="col-sm">
+                      <select id="mli_pregnancyprocedure.3f9d5838-46d3-eb11-8160-0050568b0cd5" class="mli_medicalhistory mli_pregnancyprocedure">
+                            <option value="">--</option>
+                            <option value="1">Birth</option>
+                            <option value="2">Miscarriage</option>
+                        </select>
+                    </div>
+                    <div class="col-sm">
+                      <label name="mli_riskalert.3f9d5838-46d3-eb11-8160-0050568b0cd5" for="mli_riskalert.3f9d5838-46d3-eb11-8160-0050568b0cd5">Risk Alert</label>
+                    </div>
+                    <div class="col-sm">
+                      <select id="mli_riskalert.3f9d5838-46d3-eb11-8160-0050568b0cd5" class="mli_medicalhistory mli_riskalert" multiple size="2">
+                            <option value="1">Alcohol Consumption</option>
+                            <option value="2">Risk Activites</option>
+                        </select>
+                    </div>
+                  </div>
+                  <br />
+                  <br />
+                  <div class="row">
+                    <div class="col-sm">
+                      <label name="mli_ispermanentdisability.3f9d5838-46d3-eb11-8160-0050568b0cd5" for="mli_ispermanentdisability.3f9d5838-46d3-eb11-8160-0050568b0cd5">Permanent Disability</label>
+                    </div>
+                    <div class="col-sm">
+                        <select id="mli_ispermanentdisability.3f9d5838-46d3-eb11-8160-0050568b0cd5" class="mli_medicalhistory mli_ispermanentdisability">
+                            <option value="">--</option>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm">
+                      <label name="mli_recoveryday.3f9d5838-46d3-eb11-8160-0050568b0cd5" for="mli_recoveryday.3f9d5838-46d3-eb11-8160-0050568b0cd5">Time for Recovery (days)</label>
+                    </div>
+                    <div class="col-sm">
+                      <input type="number" id="mli_recoveryday.3f9d5838-46d3-eb11-8160-0050568b0cd5" class="mli_medicalhistory mli_recoveryday" min="0" value="0" step="1" placeholder="No of ICU days" />
+                    </div>
+                    <div class="col-sm">
+                      <label name="mli_accidentdatetime.3f9d5838-46d3-eb11-8160-0050568b0cd5" for="mli_accidentdatetime.3f9d5838-46d3-eb11-8160-0050568b0cd5">Date and Time of Accident</label>
+                    </div>
+                    <div class="col-sm">
+                      <input type="text" id="mli_accidentdatetime.3f9d5838-46d3-eb11-8160-0050568b0cd5" class="calendar-time mli_medicalhistory mli_accidentdatetime" placeholder="dd/mm/yyyy hh:mins" />
+                    </div>
+                  </div>
+                </div>
+
+                </div>
+                <button type="button" class="collapsible required active">Treatment/Procedure/Surgerydetails</button>
+                <div class="content required">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+                <button type="button" class="collapsible">Death of insured while hospitalised<span class="collapse-icon">+</span></button>
+                <div class="content">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+                <button type="button" class="collapsible">Emergency Outpatient<span class="collapse-icon">+</span></button>
+                <div class="content">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+                <button type="button" class="collapsible">Pre-Hospitalization Consultation<span class="collapse-icon">+</span></button>
+                <div class="content">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+                <button type="button" class="collapsible">Post-Hospitalization Consultation<span class="collapse-icon">+</span></button>
+                <div class="content">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+                <button type="button" class="collapsible">Ambulance Benefit<span class="collapse-icon">+</span></button>
+                <div class="content">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+                <button type="button" class="collapsible required active">Bill Details</button>
+                <div class="content required">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+                <button type="button" class="collapsible required active">Payment Information</button>
+                <div class="content required">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+            </div>-->
+        </div>
+
+
+        <!--<div id="searchingByPerson" class="tabcontent">
+            <div class="row-wrapper">
+                <div class="column-label">
+                    <label name="idType" for="idType">ID Type</label>
+                </div>
+
+                <div class="column-input">
+                    <select id="idType">
+                        <option value=""></option>
+                        <option value="100000014">National ID/KTP</option>
+                        <option value="100000016">Passport</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row-wrapper">
+                <div class="column-label">
+                    <label name="idNo" for="idNo">ID Number</label>
+                </div>
+
+                <div class="column-input">
+                    <input type="text" id="idNo" />
+                </div>
+            </div>
+
+            <div class="row-wrapper">
+                <div class="column-label">
+                    <label name="name" for="name">Name</label>
+                </div>
+
+                <div class="column-input">
+                    <input type="text" id="name" />
+                </div>
+            </div>
+
+            <div class="row-wrapper">
+                <div class="column-label">
+                    <label name="dob" for="dob">Date of Birth</label>
+                </div>
+
+                <div class="column-input">
+                    <input type="text" id="dob" class="calendar" placeholder="dd/mm/yyyy" />
+                </div>
+            </div>
+        </div>
+
+        <div id="searchingByPolicy"  class="tabcontent">
+            <div class="row-wrapper">
+                <div class="column-label">
+                    <label name="policyNo" for="policyNo">Policy Number</label>
+                </div>
+
+                <div class="column-input">
+                    <input type="text" id="policyNo" />
+                </div>
+            </div>
+
+            <div class="row-wrapper">
+                <div class="column-label">
+                    <label name="certificateNo" for="certificateNo">Certificate Number</label>
+                </div>
+
+                <div class="column-input">
+                    <input type="text" id="certificateNo" />
+                </div>
+            </div>
+
+            <div class="row-wrapper">
+                <div class="column-label">
+                    <label name="dependentNo" for="dependentNo">Dependent Number</label>
+                </div>
+
+                <div class="column-input">
+                    <input type="text" id="dependentNo" />
+                </div>
+            </div>
+        </div>
+        -->
+    </div>
+    <footer>
+        <a class="btn" id="save">&nbsp;&nbsp;&nbsp;Save&nbsp;&nbsp;&nbsp;</a>
+        <a class="btn" id="apply" style="display:none" target="_blank">Save and Rerun</a> <!--▷-->
+    </footer>
+    <script src="../WebResources/mli_jquery.min.js"></script>
+    <script src="../WebResources/mli_jquery.js"></script>
+    <script type="text/jscript" src="../WebResources/mli_jquery_3.3.1.js"></script>
+    <script type="text/jscript" src="../WebResources/mli_jquery.dataTables.min.js"></script>
+    <script type="text/jscript" src="../WebResources/mli_moment.js"></script>
+    <script type="text/jscript" src="../WebResources/mli_dataTables.plugins_1.10.19.sorting.datetime_moment.js"></script>
+    <script type="text/jscript" src="../WebResources/mli_dataTables.plugins_1.10.19.dataRender.datetime.js"></script>
+    <script type="text/jscript" src="../WebResources/mli_dataTables.bootstrap4.min.js"></script>
+    <script type="text/jscript" src="../WebResources/mli_dataTables.responsive.min.js"></script>
+    <script type="text/jscript" src="../WebResources/mli_dataTables.select.min.js"></script>
+    <script type="text/jscript" src="../WebResources/mli_dataTables.rowsGroup.js"></script>
+
+    <script type="text/jscript" src="../WebResources/mli_select2.full.js"></script>
+    <script src="../WebResources/mli_eclaim_data_entry.js"></script>
+    <script type="text/jscript" src="../WebResources/mli_helper"></script>
+    <script type="text/jscript" src="../WebResources/mli_helper_eclaim.js"></script>
+    <script type="text/jscript" src="../WebResources/mli_owl_carousel.js"></script>
+    <script src="../WebResources/mli_bootstrap_multiselect.min.js"></script>
+    <script src="../WebResources/mli_jquery.datetimepicker.full.min.js"></script>
+    <script src="../WebResources/mli_datalist_css_min.js"></script>
+	
+	<!-- <script src="https://idwicrmapt23.mlijkt01.manulife.com/ISV/mli_jquery.min.js"></script> -->
+    <!-- <script src="https://idwicrmapt23.mlijkt01.manulife.com/ISV/mli_jquery.js"></script> -->
+    <!-- <script type="text/jscript" src="https://idwicrmapt23.mlijkt01.manulife.com/ISV/mli_jquery_3.3.1.js"></script> -->
+    <!-- <script type="text/jscript" src="https://idwicrmapt23.mlijkt01.manulife.com/ISV/mli_jquery.dataTables.min.js"></script> -->
+    <!-- <script type="text/jscript" src="https://idwicrmapt23.mlijkt01.manulife.com/ISV/mli_moment.js"></script> -->
+    <!-- <script type="text/jscript" src= "https://idwicrmapt23.mlijkt01.manulife.com/ISV/mli_dataTables.plugins_1.10.19.sorting.datetime_moment.js"></script> -->
+    <!-- <script type="text/jscript" src="https://idwicrmapt23.mlijkt01.manulife.com/ISV/mli_dataTables.plugins_1.10.19.dataRender.datetime.js"></script> -->
+    <!-- <script type="text/jscript" src="https://idwicrmapt23.mlijkt01.manulife.com/ISV/mli_dataTables.bootstrap4.min.js"></script> -->
+    <!-- <script type="text/jscript" src="../WebResources/mli_dataTables.responsive.min.js"></script> -->
+    <!-- <script type="text/jscript" src="https://idwicrmapt23.mlijkt01.manulife.com/ISV/mli_dataTables.select.min.js"></script> -->
+    <!-- <script type="text/jscript" src="https://idwicrmapt23.mlijkt01.manulife.com/ISV/mli_dataTables.rowsGroup.js"></script> -->
+
+    <!-- <script type="text/jscript" src="https://idwicrmapt23.mlijkt01.manulife.com/ISV/mli_select2.full.js"></script> -->
+    <!-- <script src="../WebResources/mli_eclaim_data_entry.js"></script> -->
+    <!-- <script type="text/jscript" src="https://idwicrmapt23.mlijkt01.manulife.com/ISV/mli_helper.js"></script> -->
+    <!-- <script type="text/jscript" src="https://idwicrmapt23.mlijkt01.manulife.com/ISV/mli_helper_eclaim.js"></script> -->
+    <!-- <script type="text/jscript" src="https://idwicrmapt23.mlijkt01.manulife.com/ISV/mli_owl_carousel.js"></script> -->
+    <!-- <script src="https://idwicrmapt23.mlijkt01.manulife.com/ISV/mli_bootstrap_multiselect.min.js"></script> -->
+    <!-- <script src="https://idwicrmapt23.mlijkt01.manulife.com/ISV/mli_jquery.datetimepicker.full.min.js"></script> -->
+    <!-- <script src="https://idwicrmapt23.mlijkt01.manulife.com/ISV/mli_datalist_css_min.js"></script> -->
+	
+	
+	
+	<script type="text/jscript">
+		$(".mli_hospitalizationclaimid").select2();
+	</script>
+</body>
+</html>
