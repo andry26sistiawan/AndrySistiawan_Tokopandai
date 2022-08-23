@@ -54,6 +54,7 @@
     <div class="lds-roller" id="dataEntryRoller" style="margin-left:47%;margin-top:50px; position: fixed;"><div></div><div></div><div></div></div>
     <div class="custom-scrollbar" id="fieldsets">
 		<div class="tab" id="claimTabs">
+<<<<<<< HEAD
             <!--<div class="carousel-wrap">
                 <div class="owl-carousel owl-theme">
                     <div class="item">
@@ -401,6 +402,71 @@
     </div>
     <footer>
         <a class="btn" id="save">&nbsp;&nbsp;&nbsp;Save&nbsp;&nbsp;&nbsp;</a>
+=======
+            
+        </div>
+        <div class="tabForm" id="tabContents">
+            
+        </div>
+
+		<button id="buttonHeadInvestigationAndRequirementDetail" type="button" class="collapsible required active">Investigation and Requirement Detail</button>
+		<div id="documentInvestigation" style="width:100%; padding-bottom:50px; background-color:white; border:1px solid #c4c4c4"">
+			<div>
+				<div style="padding-left:10px">
+					<label name="" for="" style="color:black; padding-left:1%;">Specify Details</label>
+				</div>
+				<div id="containerChekBoxInvestigation" class="row" style="width:50%; padding-left:20px;">
+					<div class="col-sm">
+						<input class="checkListInvestigation" type="checkbox" onclick="checkInvestigation()" id="checkBoxNeedInvestigation" name="vehicle1">
+						<label onclick="lblCheckInvestigation()" for="vehicle1">Need Investigation</label><br>
+					</div>
+					<div class="col-sm">
+						<input class="checkListInvestigation" type="checkbox" onclick="checkDocumentInvestigation()" id="checkBoxdocumentInvestigation" name="vehicle1">
+						<label onclick="lblCheckDocumentInvestigation()" for="vehicle1">Need Additional Documents</label><br>
+					</div>			
+				</div>
+				<div id="containerInvestiogationRequest">
+					<div id="lblInvestigationRequest" style="padding-left:10px">
+					<label name="" for="" style="color:black; padding-left:1%; margin-top:30px">Select Investigation Request</label>
+					</div>
+					<div id="investigationRequest" style="padding-bottom:10px; width:60%;">
+					</div>
+					<div id="" style="height:25px; width:59%; display: flex; justify-content: space-between; padding-left:10px; ">
+						<button style="width:250px" id="btnRaiseInvestigation" onclick="raiseInvestigationRequest()" class="classInvestigationRequestStatus">Raise Investigation</button>
+						<!-- <button style="width:50px" id="btnAddRowInvestigation" onclick="addRowInvestigation()" class="">Add</button> -->
+					</div>
+					<div style="padding-left:10px">
+						<label onclick="validasiReasonInvestigationDetails()"  name="" for="" id="lblViewInvestigations" style="color:black; padding-left:1%; margin-top:30px">View Investigation Details </label>
+					</div>
+					<div id="investigationDetails" style="padding-bottom:10px; width:100%; overflow-x:scroll;" class="custom-scrollbar">
+					</div>
+				</div>
+				
+				<div id="containerInvestiogationDocument">
+					<div style="padding-left:10px">
+					<label name="" for="" style="color:black; padding-left:1%; margin-top:30px">Select Additional Document</label>
+					</div>
+					<div id="needAdditionalDocument" style="padding-bottom:10px; width:60%;">
+					</div>
+					<div id="" style="height:25px; width:59%; display: flex; justify-content: flex-end; justify-content: space-between; padding-left:10px; ">
+						<button style="width:250px" id="" class="" onclick="raiseInvestigationRequestDocuments()">Raise Investigation</button>
+						<!-- <button style="width:50px" id="" onclick="addRowadditionalDocument()" class="">Add</button>						 -->
+					</div>
+					<div style="padding-left:10px">
+						<label name="" for="" style="color:black; padding-left:1%; margin-top:30px">View Investigation Documents </label>
+					</div>
+					<div id="investigationDocuments" style="padding-bottom:10px; width:100%; overflow-x:scroll;" class="custom-scrollbar">
+					</div>
+					
+				</div>
+				
+			</div>
+				
+		</div>
+    </div>
+    <footer>
+        <a class="btn" id="save" style="width:70px;">Save</a>
+>>>>>>> Phase2
         <a class="btn" id="apply" style="display:none" target="_blank">Save and Rerun</a> <!--▷-->
     </footer>
     <script src="../WebResources/mli_jquery.min.js"></script>
