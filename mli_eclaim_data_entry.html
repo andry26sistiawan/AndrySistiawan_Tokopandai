@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Entry</title>
+    <link rel="stylesheet" type="text/css" href="../WebResources/mli_bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../WebResources/mli_select2.css" />
+    <link rel="stylesheet" href="../WebResources/mli_eclaim_data_entry.css">
+    <link rel="stylesheet" href="../WebResources/mli_eclaim_claim_detail.css">
+    <link rel="stylesheet" type="text/css" href="../WebResources/mli_dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="../WebResources/mli_jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="../WebResources/mli_responsive.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="../WebResources/mli_select.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="../WebResources/mli_jquery.datetimepicker.css">
+    <link rel="stylesheet" type="text/css" href="../WebResources/mli_owl_theme_default_min.css">
+    <link rel="stylesheet" type="text/css" href="../WebResources/mli_owl_carousel_min.css">
+	
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script> -->
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css"/> -->
+	
+	
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"> -->
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/css/bootstrap-select.min.css"> -->
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+	<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.bundle.min.js"></script> -->
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/js/bootstrap-select.min.js"></script> -->
+	
+    <style>
+        .multipleselect {
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 12px;
+        }
+		
+		.select2 select2-container{
+			width: 170px;
+		}
+		.select2-results__option select2-results__option--selectable select2-results__option--selected{
+			font-size: 12px;
+		
+		}
+		.fooSelect .select2-results__option
+		{
+			font-size: 12px;
+		}
+		.select2-results__option
+		{
+			font-size: 12px;
+		}
+    </style>
+    <!--<link rel="stylesheet" type="text/css" href="../WebResources/mli_bootstrap_multiselect.css">-->
+</head>
+<body>
+    <div class="lds-roller" id="dataEntryRoller" style="margin-left:47%;margin-top:50px; position: fixed;"><div></div><div></div><div></div></div>
+    <div class="custom-scrollbar" id="fieldsets">
+		<div class="tab" id="claimTabs">
+            
+        </div>
+        <div class="tabForm" id="tabContents">
+            
+        </div>
+
+		<button id="buttonHeadInvestigationAndRequirementDetail" type="button" class="collapsible required active">Investigation and Requirement Detail</button>
+		<div id="documentInvestigation" style="width:100%; padding-bottom:50px; background-color:white; border:1px solid #c4c4c4"">
+			<div>
+				<div style="padding-left:10px">
+					<label name="" for="" style="color:black; padding-left:1%;">Specify Details</label>
+				</div>
+				<div id="containerChekBoxInvestigation" class="row" style="width:50%; padding-left:20px;">
+					<div class="col-sm">
+						<input class="checkListInvestigation" type="checkbox" onclick="checkInvestigation()" id="checkBoxNeedInvestigation" name="vehicle1">
+						<label onclick="lblCheckInvestigation()" for="vehicle1">Need Investigation</label><br>
+					</div>
+					<div class="col-sm">
+						<input class="checkListInvestigation" type="checkbox" onclick="checkDocumentInvestigation()" id="checkBoxdocumentInvestigation" name="vehicle1">
+						<label onclick="lblCheckDocumentInvestigation()" for="vehicle1">Need Additional Documents</label><br>
+					</div>			
+				</div>
+				<div id="containerInvestiogationRequest">
+					<div id="lblInvestigationRequest" style="padding-left:10px">
+					<label name="" for="" style="color:black; padding-left:1%; margin-top:30px">Select Investigation Request</label>
+					</div>
+					<div id="investigationRequest" style="padding-bottom:10px; width:60%;">
+					</div>
+					<div id="" style="height:25px; width:59%; display: flex; justify-content: space-between; padding-left:10px; ">
+						<button style="width:250px" id="btnRaiseInvestigation" onclick="raiseInvestigationRequest()" class="classInvestigationRequestStatus">Raise Investigation</button>
+						<!-- <button style="width:50px" id="btnAddRowInvestigation" onclick="addRowInvestigation()" class="">Add</button> -->
+					</div>
+					<div style="padding-left:10px">
+						<label onclick="validasiReasonInvestigationDetails()"  name="" for="" id="lblViewInvestigations" style="color:black; padding-left:1%; margin-top:30px">View Investigation Details </label>
+					</div>
+					<div id="investigationDetails" style="padding-bottom:10px; width:100%; overflow-x:scroll;" class="custom-scrollbar">
+					</div>
+				</div>
+				
+				<div id="containerInvestiogationDocument">
+					<div style="padding-left:10px">
+					<label name="" for="" style="color:black; padding-left:1%; margin-top:30px">Select Additional Document</label>
+					</div>
+					<div id="needAdditionalDocument" style="padding-bottom:10px; width:60%;">
+					</div>
+					<div id="" style="height:25px; width:59%; display: flex; justify-content: flex-end; justify-content: space-between; padding-left:10px; ">
+						<button style="width:250px" id="" class="" onclick="raiseInvestigationRequestDocuments()">Raise Investigation</button>
+						<!-- <button style="width:50px" id="" onclick="addRowadditionalDocument()" class="">Add</button>						 -->
+					</div>
+					<div style="padding-left:10px">
+						<label name="" for="" style="color:black; padding-left:1%; margin-top:30px">View Investigation Documents </label>
+					</div>
+					<div id="investigationDocuments" style="padding-bottom:10px; width:100%; overflow-x:scroll;" class="custom-scrollbar">
+					</div>
+					
+				</div>
+				
+			</div>
+				
+		</div>
+    </div>
+    <footer>
+        <a class="btn" id="save" style="width:70px;">Save</a>
+        <a class="btn" id="apply" style="display:none" target="_blank">Save and Rerun</a> <!--▷-->
+    </footer>
+    <script src="../WebResources/mli_jquery.min.js"></script>
+    <script src="../WebResources/mli_jquery.js"></script>
+    <script type="text/jscript" src="../WebResources/mli_jquery_3.3.1.js"></script>
+    <script type="text/jscript" src="../WebResources/mli_jquery.dataTables.min.js"></script>
+    <script type="text/jscript" src="../WebResources/mli_moment.js"></script>
+    <script type="text/jscript" src="../WebResources/mli_dataTables.plugins_1.10.19.sorting.datetime_moment.js"></script>
+    <script type="text/jscript" src="../WebResources/mli_dataTables.plugins_1.10.19.dataRender.datetime.js"></script>
+    <script type="text/jscript" src="../WebResources/mli_dataTables.bootstrap4.min.js"></script>
+    <script type="text/jscript" src="../WebResources/mli_dataTables.responsive.min.js"></script>
+    <script type="text/jscript" src="../WebResources/mli_dataTables.select.min.js"></script>
+    <script type="text/jscript" src="../WebResources/mli_dataTables.rowsGroup.js"></script>
+
+    <script type="text/jscript" src="../WebResources/mli_select2.full.js"></script>
+    <script src="../WebResources/mli_eclaim_data_entry.js"></script>
+    <script type="text/jscript" src="../WebResources/mli_helper"></script>
+    <script type="text/jscript" src="../WebResources/mli_helper_eclaim.js"></script>
+    <script type="text/jscript" src="../WebResources/mli_owl_carousel.js"></script>
+    <script src="../WebResources/mli_bootstrap_multiselect.min.js"></script>
+    <script src="../WebResources/mli_jquery.datetimepicker.full.min.js"></script>
+    <script src="../WebResources/mli_datalist_css_min.js"></script>
+	
+	<!-- <script src="https://idwicrmapt23.mlijkt01.manulife.com/ISV/mli_jquery.min.js"></script> -->
+    <!-- <script src="https://idwicrmapt23.mlijkt01.manulife.com/ISV/mli_jquery.js"></script> -->
+    <!-- <script type="text/jscript" src="https://idwicrmapt23.mlijkt01.manulife.com/ISV/mli_jquery_3.3.1.js"></script> -->
+    <!-- <script type="text/jscript" src="https://idwicrmapt23.mlijkt01.manulife.com/ISV/mli_jquery.dataTables.min.js"></script> -->
+    <!-- <script type="text/jscript" src="https://idwicrmapt23.mlijkt01.manulife.com/ISV/mli_moment.js"></script> -->
+    <!-- <script type="text/jscript" src= "https://idwicrmapt23.mlijkt01.manulife.com/ISV/mli_dataTables.plugins_1.10.19.sorting.datetime_moment.js"></script> -->
+    <!-- <script type="text/jscript" src="https://idwicrmapt23.mlijkt01.manulife.com/ISV/mli_dataTables.plugins_1.10.19.dataRender.datetime.js"></script> -->
+    <!-- <script type="text/jscript" src="https://idwicrmapt23.mlijkt01.manulife.com/ISV/mli_dataTables.bootstrap4.min.js"></script> -->
+    <!-- <script type="text/jscript" src="../WebResources/mli_dataTables.responsive.min.js"></script> -->
+    <!-- <script type="text/jscript" src="https://idwicrmapt23.mlijkt01.manulife.com/ISV/mli_dataTables.select.min.js"></script> -->
+    <!-- <script type="text/jscript" src="https://idwicrmapt23.mlijkt01.manulife.com/ISV/mli_dataTables.rowsGroup.js"></script> -->
+
+    <!-- <script type="text/jscript" src="https://idwicrmapt23.mlijkt01.manulife.com/ISV/mli_select2.full.js"></script> -->
+    <!-- <script src="../WebResources/mli_eclaim_data_entry.js"></script> -->
+    <!-- <script type="text/jscript" src="https://idwicrmapt23.mlijkt01.manulife.com/ISV/mli_helper.js"></script> -->
+    <!-- <script type="text/jscript" src="https://idwicrmapt23.mlijkt01.manulife.com/ISV/mli_helper_eclaim.js"></script> -->
+    <!-- <script type="text/jscript" src="https://idwicrmapt23.mlijkt01.manulife.com/ISV/mli_owl_carousel.js"></script> -->
+    <!-- <script src="https://idwicrmapt23.mlijkt01.manulife.com/ISV/mli_bootstrap_multiselect.min.js"></script> -->
+    <!-- <script src="https://idwicrmapt23.mlijkt01.manulife.com/ISV/mli_jquery.datetimepicker.full.min.js"></script> -->
+    <!-- <script src="https://idwicrmapt23.mlijkt01.manulife.com/ISV/mli_datalist_css_min.js"></script> -->
+	
+	
+	
+	<script type="text/jscript">
+		$(".mli_hospitalizationclaimid").select2();
+	</script>
+</body>
+</html>
